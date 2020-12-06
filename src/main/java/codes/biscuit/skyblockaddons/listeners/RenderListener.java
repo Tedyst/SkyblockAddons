@@ -1148,6 +1148,9 @@ public class RenderListener {
                 r = (1 - percent) * 0.66F + 0.33F;
                 g = 1;
             }
+            // This is so it dosen't go outside the boundary
+            r = Math.min(r, 1);
+            g = Math.min(g, 1);
             int secretsColor = new Color(r, g, 0.33F).getRGB();
 
             float secretsWidth = mc.fontRendererObj.getStringWidth(String.valueOf(secrets));
